@@ -1,0 +1,184 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background: rgb(252, 247, 243);
+    overflow-x: hidden;
+    font-size: 10px;
+}
+
+/* ==================HEADER================== */
+
+.header {
+    width: 100%;
+    height: fit-content;
+}
+
+.cap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1vh 0 3.5vh 0;
+}
+
+.cap h1 {
+    padding-top: 8%;
+    font-size: 5em;
+    text-indent: 15px;
+}
+
+.cap__logo {
+    width: 100px;
+    height: 100px;
+}
+
+.cap__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.cap__quote {
+    text-align: center;
+    margin: 0 auto 2.7% auto;
+}
+
+.cap__quote p{
+    font-size: 3em;
+}
+
+/* ==================MAIN================== */
+
+.main {
+    width: 100%;
+    height: fit-content;
+}
+
+.book-part {
+    width: fit-content;
+}
+
+.book-part__anotation {
+    text-align: center;
+    margin: 0 1% 1% 1%;
+}
+
+.book-part__anotation p {
+    font-size: 3.33em;
+}
+
+.book-part__link {
+    text-align: center;
+    margin: 0 auto 3.5% auto;
+}
+
+.book-part__link a {
+    font-size: 2em;
+    color: rgb(255, 140, 52);
+}
+
+/* =======GALLARY======= */
+
+.gallary {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 5em;
+    column-gap: 1.8%;
+
+    margin: 0 7% 2.5% 7%;
+}
+
+.gallary__box {
+    flex: 1 1 100px;
+}
+
+.gallary__box img{
+    width: 100%;
+    object-fit: fill;
+    object-position: top;
+}
+
+/* ==================FOOTER================== */
+.footer {
+    width: 100%;
+    height: fit-content;
+}
+
+.footer__nav {
+    display: flex;
+    width: 100%;
+    margin: 0 0 5em 0;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+}
+
+.list__item {
+    font-size: 2.4em;
+    margin: 0 1em;
+    text-transform: uppercase;
+}
+
+.footer__contact {
+    font-size: 2.4em;
+    width: 100%;
+    margin: 0 auto 1em auto;
+    text-align: center;
+}
+
+.footer__contact a {
+    color: rgb(232, 120, 15);
+}
+
+@media (max-width: 1440px) and (min-width: 1024px) {
+
+    .gallary__box {
+        /* flex-basis равен 1/4 от ширины контейнера с учётом горизонтальных отступов */
+        flex:1 1 calc((100% - 3 * 1.8%) / 4); 
+    }
+
+    .cap__quote p {
+        font-size: 2em;
+    }
+
+    .book-part p {
+        font-size: 2.9em;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 0px) {
+
+    body {
+        display: grid;
+        grid-template-areas: 
+       "header main footer";
+    }
+
+    .gallary {
+        flex-flow: column wrap;
+    }
+}
