@@ -164,7 +164,9 @@ body {
         display: grid;
         gap: 10px;
         grid-template-columns: 40% 35% 25%;
-        grid-template-areas: "header main section" "footer footer footer";
+        grid-template-areas:
+        "header main section"
+        "footer footer footer";
     }
     .header__cap {
         margin: 4vh 0 3.5vh 0;
@@ -214,7 +216,7 @@ body {
     }
 
     .footer {
-        grid-column: 2/3;
+        grid-column: 1/4;
     }
 
     .footer__nav {
@@ -224,10 +226,6 @@ body {
 
     .list__item {
         font-size: 3.125vw;
-    }
-
-    .footer__contact {
-        text-indent: -25px;
     }
 
     .footer__contact a {
