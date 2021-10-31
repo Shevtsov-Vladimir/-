@@ -168,9 +168,10 @@ body {
         "header main section"
         "footer footer footer";
     }
+
     .header__cap {
-        margin: 4vh 0 3.5vh 0;
         width: fit-content;
+        margin: 4vh 0 3.5vh 0;
     }
 
     .cap__logo {
@@ -180,9 +181,9 @@ body {
 
     .header__cap h1 {
         font-size: 3.90625vw;
-        text-indent: 5px;
         white-space: nowrap;
-        /* word-spacing: 15px; */
+        text-indent: 5px;
+
         padding-top: 1%;
     }
 
@@ -204,14 +205,15 @@ body {
     }
 
     .gallary {
-        flex-flow: column nowrap;
-        margin-top: 3vh;
         row-gap: 1em;
+        margin-top: 3vh;
+        flex-flow: column nowrap;
     }
 
     .gallary__box {
         box-sizing: border-box;
         padding: 0 7% 0 7%;
+        
         flex: 1 1 86%;
     }
 
