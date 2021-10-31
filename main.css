@@ -162,7 +162,7 @@ body {
 @media (max-width: 768px) and (orientation: portrait) {
     body {
         display: grid;
-        gap: 10px;
+        row-gap: 2.6041vw;
         grid-template-columns: 40% 35% 25%;
         grid-template-areas:
         "header main section"
@@ -226,6 +226,10 @@ body {
 
     .list__item {
         font-size: 3.125vw;
+    }
+
+    .footer__contact {
+        margin: 0 0 3px 0;
     }
 
     .footer__contact a {
