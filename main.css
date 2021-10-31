@@ -1,28 +1,16 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font: inherit;
-	vertical-align: baseline;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
     text-decoration: none;
     color: black;
 }
 
 body {
     background: rgb(252, 247, 243);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-size: 10px;
 }
 
@@ -33,16 +21,16 @@ body {
     height: fit-content;
 }
 
-.cap {
+.header__cap {
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin: 1vh 0 3.5vh 0;
 }
 
-.cap h1 {
+.header__cap h1 {
     padding-top: 8%;
+    font-weight: 700;
     font-size: 5em;
     text-indent: 15px;
 }
@@ -55,15 +43,16 @@ body {
 .cap__logo img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: contain;
 }
 
 .cap__quote {
+    font-weight: 700;
     text-align: center;
     margin: 0 auto 2.7% auto;
 }
 
-.cap__quote p{
+.cap__quote p {
     font-size: 3em;
 }
 
@@ -80,7 +69,7 @@ body {
 
 .book-part__anotation {
     text-align: center;
-    margin: 0 1% 1% 1%;
+    margin: 0 1% 1.7% 1%;
 }
 
 .book-part__anotation p {
@@ -104,21 +93,22 @@ body {
     flex-flow: row wrap;
     row-gap: 5em;
     column-gap: 1.8%;
-
     margin: 0 7% 2.5% 7%;
 }
 
 .gallary__box {
     flex: 1 1 100px;
+    height: max-content;
 }
 
-.gallary__box img{
+.gallary__box img {
     width: 100%;
     object-fit: fill;
     object-position: top;
 }
 
 /* ==================FOOTER================== */
+
 .footer {
     width: 100%;
     height: fit-content;
@@ -155,30 +145,76 @@ body {
 }
 
 @media (max-width: 1440px) and (min-width: 1024px) {
-
     .gallary__box {
         /* flex-basis равен 1/4 от ширины контейнера с учётом горизонтальных отступов */
-        flex:1 1 calc((100% - 3 * 1.8%) / 4); 
+        flex: 1 1 calc((100% - 3 * 1.8%) / 4);
     }
-
     .cap__quote p {
         font-size: 2em;
     }
-
     .book-part p {
         font-size: 2.9em;
     }
 }
 
-@media (max-width: 1024px) and (min-width: 0px) {
-
+@media (max-width: 1024px) and (min-width: 320px) {
     body {
         display: grid;
-        grid-template-areas: 
-       "header main footer";
+        gap: 10px;
+        grid-template-columns: 40% 35% 25%;
+        grid-template-areas: "header main section" "footer footer footer";
+    }
+    .header__cap {
+        margin: 4vh 0 3.5vh 0;
+        width: fit-content;
+    }
+
+    .cap__logo {
+        width: 80px;
+        height: 75px;
+    }
+
+    .header__cap h1 {
+        font-size: 5em;
+        text-indent: 5px;
+        white-space: nowrap;
+        word-spacing: 15px;
+        padding-top: 1%;
+    }
+
+    .cap__quote p {
+        font-size: 2.6em;
+        line-height: 2em;
+    }
+
+    .book-part__anotation {
+        margin: 5vh 0 7% 0;
+    }
+
+    .book-part__anotation p {
+        font-size: 4em;
+        text-align: left;
+    }
+
+    .book-part__link a {
+        font-size: 3em;
     }
 
     .gallary {
-        flex-flow: column wrap;
+        flex-flow: column nowrap;
+        margin-top: 3vh;
+    }
+
+    .gallary__box {
+        box-sizing: border-box;
+        padding: 0 7% 0 7%;
+        flex: 1 1 86%;
+    }
+
+    .footer {
+        grid-column: 1/2;
+    }
+    .footer__nav {
+        text-align: center;
     }
 }
