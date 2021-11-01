@@ -1,3 +1,4 @@
+/* Блок обнуления стилей */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
@@ -7,6 +8,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     text-decoration: none;
     color: black;
 }
+
+/* Основной дизайн изначально сделан для устройст с шириной экрана
+ от 1440px до 2560px (2560px~1440px) */
 
 body {
     background: rgb(252, 247, 243);
@@ -146,35 +150,45 @@ body {
     color: rgb(232, 120, 15);
 }
 
-@media (max-width: 1440px) and (min-width: 769px) {
+/* Стили для устройвств с шириной экрана от 769px и до 1440px (1440px~768px) */
+@media (max-width: 1440px) and (min-width: 768px) {
+    /* стиль для абзацев шапки */
+    .cap__quote p {
+        font-size: 2em;
+    }
+
+    /* стиль для абзацев главного блока с текстом внутри main*/
+    .book-part p {
+        font-size: 2.9em;
+    }
+
+    /* стиль для размера контейнера картинок с котами */
     .gallary__box {
         /* flex-basis равен 1/4 от ширины контейнера с учётом горизонтальных отступов */
         flex: 1 1 calc((100% - 3 * 1.8%) / 4);
     }
-    .cap__quote p {
-        font-size: 2em;
-    }
-    .book-part p {
-        font-size: 2.9em;
-    }
 }
 
+/* Стили для устройств с экраном меньше или равным 768px (x<=768px)
+ и имеющим книжную ориентацию (высота экрана устройства, больше ширины) */
 @media (max-width: 768px) and (orientation: portrait) {
     body {
         display: grid;
         row-gap: 2.6041vw;
         grid-template-columns: 40% 35% 25%;
         grid-template-areas:
-        "header main section"
+        "header main main"
         "footer footer footer";
     }
 
+    /* ===========HEADER=========== */
     .header__cap {
         width: fit-content;
         margin: 4vh 0 3.5vh 0;
     }
 
     .cap__logo {
+        /* Соотношение сторон картинки 85×75 */
         width: 10.416vw;
         height: 9.765625vw;
     }
@@ -191,6 +205,19 @@ body {
         font-size: 3.2552083vw;
     }
 
+    /* ===========MAIN=========== */
+
+    .main {
+        grid-column: 2/4;
+        display: grid;
+        /* main делится на две колонки с соотношением 7/5 */
+        grid-template-columns: calc((100% / 12) * 7) calc((100% / 12) * 5);
+
+        box-sizing: border-box;
+        padding-left: 3%;
+    }
+
+    /* Аннотация к книге "The Unadulterated Cat" и ссылка на неё */
     .book-part__anotation {
         margin: 5vh 0 7% 0;
     }
@@ -204,9 +231,10 @@ body {
         font-size: 3.90625vw;
     }
 
+    /* Картинки с котами */
     .gallary {
         row-gap: 1em;
-        margin-top: 3vh;
+        margin-top: 4vh;
         flex-flow: column nowrap;
     }
 
@@ -217,6 +245,7 @@ body {
         flex: 1 1 86%;
     }
 
+    /* ===========FOOTER=========== */
     .footer {
         grid-column: 1/4;
     }
