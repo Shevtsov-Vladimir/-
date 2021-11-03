@@ -94,7 +94,7 @@ body {
 
 /* =======GALLARY======= */
 
-.gallary {
+.gallery {
     display: flex;
     flex-flow: row wrap;
     row-gap: 5em;
@@ -102,12 +102,12 @@ body {
     margin: 0 7% 2.5% 7%;
 }
 
-.gallary__box {
+.gallery__box {
     flex: 1 1 100px;
     height: max-content;
 }
 
-.gallary__box img {
+.gallery__box img {
     width: 100%;
     object-fit: fill;
     object-position: top;
@@ -163,7 +163,7 @@ body {
     }
 
     /* стиль для размера контейнера картинок с котами */
-    .gallary__box {
+    .gallery__box {
         /* flex-basis равен 1/4 от ширины контейнера с учётом горизонтальных отступов */
         flex: 1 1 calc((100% - 3 * 1.8%) / 4);
     }
@@ -232,13 +232,13 @@ body {
     }
 
     /* Картинки с котами */
-    .gallary {
+    .gallery {
         row-gap: 1em;
         margin-top: 4vh;
         flex-flow: column nowrap;
     }
 
-    .gallary__box {
+    .gallery__box {
         box-sizing: border-box;
         padding: 0 7% 0 7%;
         
