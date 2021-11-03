@@ -151,7 +151,7 @@ body {
 }
 
 /* Стили для устройвств с шириной экрана от 769px и до 1440px (1440px~768px) */
-@media (max-width: 1440px) and (min-width: 768px) {
+@media screen and (max-width: 1440px) and (min-width: 768px) {
     /* стиль для абзацев шапки */
     .cap__quote p {
         font-size: 2em;
@@ -171,7 +171,7 @@ body {
 
 /* Стили для устройств с экраном меньше или равным 768px (x<=768px)
  и имеющим книжную ориентацию (высота экрана устройства, больше ширины) */
-@media (max-width: 768px) and (orientation: portrait) {
+@media screen and (max-width: 768px) and (orientation: portrait) {
     body {
         display: grid;
         row-gap: 2.6041vw;
